@@ -49,15 +49,28 @@
 
     <script>
 
-        let i = 0
+        let i = 1
         setInterval(() => {
             if(i==0) {
-
+                document.getElementById("img1").style="opacity:0; display:block"
+                document.getElementById("img2").style="opacity:0; display:block"
+                document.getElementById("img3").style="opacity:0; display:block"
             } else if (i ==1){
-
+                document.getElementById("img1").style="opacity:0; display:block"
+                setTimeout(()=>{document.getElementById("img1").style="opacity:1; display:block"},500)
+                document.getElementById("img2").style="opacity:0; display:block"
+                document.getElementById("img3").style="opacity:0; display:block"
             } else if(i==2){
+                document.getElementById("img1").style="opacity:0; display:block"
+                document.getElementById("img2").style="opacity:1; display:block"
+                document.getElementById("img3").style="opacity:0; display:block"
+                
+            } else if (i ==3) {
+                document.getElementById("img1").style="opacity:0; display:block"
+                document.getElementById("img2").style="opacity:0; display:block"
+                document.getElementById("img3").style="opacity:1; display:block"
                 i=0
-            } 
+            }
 
             i++
         }, 3000);

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .main {
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img {
+            transition: ease-in 0.7s;
+            display: none;
+            width: 100%;
+            height: 100%;
+            opacity:0;
+            position: absolute;
+            top: 0%;
+            z-index: 100;
+            width: 1200px;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img id="img1" class="img">
+
+
+    </div>
+
+
+
+
+    <script>
+
+        let index = 0
+        let elencoImmagini = ["https://i.kym-cdn.com/entries/icons/facebook/000/042/690/Screen_Shot_2022-11-16_at_2.24.03_PM.jpg", "https://media.cnn.com/api/v1/images/stellar/prod/191121175126-the-mandelorian-baby-yoda-2.jpg?q=w_1600,h_900,x_0,y_0,c_fill", "https://i.ytimg.com/vi/yK48g9mCqrk/maxresdefault.jpg"]
+       let img= document.getElementById("img1")
+       let imgIndex=0
+       
+        setInterval(() => {
+            
+            
+            if (index == 0) {
+                img.src= elencoImmagini[index];
+                document.getElementById("img1").style = "opacity:0; display:block";
+                setTimeout(()=>{document.getElementById("img1").style = "opacity:1; display:block"},1000);
+                setTimeout(()=>{document.getElementById("img1").style = "opacity:0; display:block"},2000);
+                
+            } else if (index == 1) {
+                img.src= elencoImmagini[index];
+                document.getElementById("img1").style = "opacity:0; display:block";
+                setTimeout(()=>{document.getElementById("img1").style = "opacity:1; display:block"},1000);
+                setTimeout(()=>{document.getElementById("img1").style = "opacity:0; display:block"},2000);
+               
+            } else if (index == 2) {
+                img.src= elencoImmagini[index];
+                document.getElementById("img1").style = "opacity:0; display:block";
+                setTimeout(()=>{document.getElementById("img1").style = "opacity:1; display:block"},1000);
+                setTimeout(()=>{document.getElementById("img1").style = "opacity:0; display:block"},2000);
+                
+                
+            } 
+            /* questa espressione significa se index e' maggiore di 1  allora index torna a 0, altrimenti index= index + 1 */
+            index>1 ? index= 0 : index++;
+        }, 3000);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
