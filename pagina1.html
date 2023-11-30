@@ -42,29 +42,6 @@
 
 <body style="background-color: black;">
 
-    <h1 style="color: white;text-align: center;font-size: 45px; margin-top: 50px;">
-        Timer</h1>
-
-
-
-    <div style="display: flex;align-items: center;justify-content: center;">
-
-        <p style="color: white;">Clicca Start per una sorpresa</p>
-
-
-
-        <button onclick="iniziaTimer()" class="buttonStart">
-            Start
-        </button>
-        <button onclick="stoppaIntervallo()" class="buttonStart"
-            style="background-color: black;border: 1px solid white">
-            Stop
-        </button>
-        <button onclick="resetIntervallo()" class="buttonStart"
-            style="background-color: black;border: 1px solid red; color: red;">
-            Reset
-        </button>
-    </div>
 
     <div style="display: flex;align-items: center;justify-content: center;">
         <h1 id="countdown" style="font-size: 100px;color: white;text-align: center;margin-top: 50px;"></h1>
@@ -91,7 +68,7 @@
                 if (countdown == 0) {
                     clearInterval(intervalloTimer);
                     countdown = null
-                    document.getElementById("countdown").innerHTML = countdown;
+                    document.getElementById("countdown").innerHTML = "";
                     document.getElementById("comparsaImmagine").style = "display:block;opacity: 0;"
                    
                     setTimeout(function () {
@@ -102,17 +79,8 @@
             }, 1000);
 
         }
-        function stoppaIntervallo() {
-            clearInterval(intervalloTimer);
-        }
-
-        function resetIntervallo() {
-            clearInterval(intervalloTimer);
-            countdown = null;
-            document.getElementById("countdown").innerHTML = "";
-            document.getElementById("comparsaImmagine").style = "display:none;"
-
-        }
+        
+        iniziaTimer()
 
     </script>
 
